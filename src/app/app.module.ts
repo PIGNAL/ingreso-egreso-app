@@ -21,7 +21,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import {ReactiveFormsModule} from '@angular/forms';
-
+import { OrdenIngresoPipe } from './pipes/orden-ingreso.pipe';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     DetalleComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    OrdenIngresoPipe
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ import {ReactiveFormsModule} from '@angular/forms';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
