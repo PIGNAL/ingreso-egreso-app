@@ -34,15 +34,15 @@ export class AuthService {
                       
                         const user = Usuario.fromFirebase(firestoreUser);
                         this._user = user;
-                        console.log(this._user);
                         
                         this.store.dispatch(authActions.setUser({ user }));
                         this.store.dispatch(unSetItems());
                       });
       }else{
           this._user = null;
-          this.userSubscription.unsubscribe();
+          this.userSubscription?.unsubscribe();
           this.store.dispatch(authActions.unSetUser());
+          this.store.dispatch(unSetItems());
       }
 
     });
